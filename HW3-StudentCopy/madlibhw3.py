@@ -19,7 +19,7 @@ print("START*******")
 from nltk import word_tokenize,sent_tokenize
 
 tokens = text2[:150]
-print(tokens)
+print(" ".join(tokens))
 tagged_tokens = nltk.pos_tag(tokens)
 
 tagmap = {"NN":"a noun","NNS":"a plural noun","VB":"a verb","JJ":"an adjective","ADV":"an adverb"}
