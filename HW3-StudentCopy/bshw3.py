@@ -8,5 +8,7 @@
 # 3) Replace any local images with the image I provided in media.  (You
 # must keep the image in a separate folder than your html code.
 
+print("Hi")
+
 # Deliverables
 # Make sure the new page is uploaded to your GitHub account.
