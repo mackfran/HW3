@@ -25,10 +25,17 @@ api = tweepy.API(auth)
 
 public_tweets = api.search("Donald Trump")
 
-for tweet in public_tweets:
-	print(tweet.text)
-	analysis = TextBlob(tweet.text)
-	print(analysis.sentiment, '\n')
+subjectivity = []
+polarity = []
 
-print("Average subjectivity is")
-print("Average polarity is")
+for tweet in public_tweets:
+	print(tweet.text, '\n')
+	analysis = TextBlob(tweet.text)
+	subjectivity.append(analysis.sentiment.subjectivity)
+	polarity.append(analysis.sentiment.polarity)
+
+sub_avg = sum(subjectivity)/len(subjectivity)
+pol_avg = sum(polarity)/len(polarity)
+
+print("Average subjectivity is " + str(sub_avg))
+print("Average polarity is " + str(pol_avg))
