@@ -7,6 +7,28 @@
 
 # Be prepared to change the search term during demo.
 
+import tweepy
+from textblob import TextBlob
+
+# Unique code from Twitter
+access_token = "241344659-yFB9FvxHwPSj9sgCY68l6E97wLxC2yGf1Pw0Ukl0"
+access_token_secret = "woXcePujVFtkLKdkmUm4Dt1L1roxIhOGHFxeyR7BLlXlM"
+consumer_key = "tfJePQmvQLvhV7FYoKgM91AdO"
+consumer_secret = "cjzeadvaqAZqQoQrjZxJvJiGTUR95aN9scw76pEE08vEYcamha"
+
+# Boilerplate code here
+auth = tweepy.OAuthHandler(consumer_key,consumer_secret)
+auth.set_access_token(access_token,access_token_secret)
+
+api = tweepy.API(auth)
+#Now we can Create Tweets, Delete Tweets, and Find Twitter Users
+
+public_tweets = api.search("Donald Trump")
+
+for tweet in public_tweets:
+	print(tweet.text)
+	analysis = TextBlob(tweet.text)
+	print(analysis.sentiment, '\n')
 
 print("Average subjectivity is")
 print("Average polarity is")
