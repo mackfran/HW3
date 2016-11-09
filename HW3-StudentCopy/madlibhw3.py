@@ -1,7 +1,3 @@
-import nltk
-from nltk.book import *
-import random
-
 # Using text2 from the nltk book corpa, create your own version of the
 # MadLib program.  
 
@@ -14,12 +10,18 @@ import random
 # 1) Print the orginal text (150 tokens)
 # 1) Print the new text
 
-print("START*******")
+# Sources:
+	## http://www.nltk.org/book/ch05.html
 
+import nltk
+from nltk.book import *
+import random
 from nltk import word_tokenize,sent_tokenize
 
+print("START*******")
+
 tokens = text2[:150]
-print(" ".join(tokens))
+print(" ".join(tokens), '\n')
 tagged_tokens = nltk.pos_tag(tokens)
 
 tagmap = {"NN":"a noun","NNS":"a plural noun","VB":"a verb","JJ":"an adjective","ADV":"an adverb"}
@@ -41,6 +43,5 @@ for (word, tag) in tagged_tokens:
 		new_word = input("Please enter %s:\n" % (tagmap[tag]))
 		final_words.append(spaced(new_word))
 
-print ("".join(final_words))
-
 print("\n\nEND*******")
+print ("".join(final_words))
