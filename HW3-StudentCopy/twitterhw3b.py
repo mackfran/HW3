@@ -29,7 +29,7 @@ auth.set_access_token(access_token,access_token_secret)
 api = tweepy.API(auth)
 
 # searches for public tweets containing a specified search term
-public_tweets = api.search("Donald Trump")
+public_tweets = api.search("Barack Obama")
 
 # creates empty lists for the subjectivity and polarity values of these tweets
 subjectivity = []
