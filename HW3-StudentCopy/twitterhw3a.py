@@ -30,7 +30,7 @@ auth.set_access_token(access_token,access_token_secret)
 api = tweepy.API(auth)
 
 try:
-	# updates Twitter status with text and an accompanying image
+	# updates Twitter status with text and an image
 	api.update_with_media(filename='UofM.jpg', status='#UMSI-206 #Proj3')
 	print("Success!")
 except:
