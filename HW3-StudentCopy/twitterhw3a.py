@@ -1,3 +1,9 @@
+# Name: Mackenzie Francisco
+# uniqname: mackfran
+# Section Day/Time: Thursday/1-2PM
+# References: Amanda McLeod, Colleen's twitter code
+#             Internet sources (listed above the code for the part they were used for)
+
 # Write a Python file that uploads an image to your 
 # Twitter account.  Make sure to use the 
 # hashtags #UMSI-206 #Proj3 in the tweet.
@@ -10,20 +16,21 @@
 
 import tweepy
 
-# Unique code from Twitter
+# unique code from Twitter
 access_token = "241344659-yFB9FvxHwPSj9sgCY68l6E97wLxC2yGf1Pw0Ukl0"
 access_token_secret = "woXcePujVFtkLKdkmUm4Dt1L1roxIhOGHFxeyR7BLlXlM"
 consumer_key = "tfJePQmvQLvhV7FYoKgM91AdO"
 consumer_secret = "cjzeadvaqAZqQoQrjZxJvJiGTUR95aN9scw76pEE08vEYcamha"
 
-# Boilerplate code here
+# boilerplate code here
 auth = tweepy.OAuthHandler(consumer_key,consumer_secret)
 auth.set_access_token(access_token,access_token_secret)
 
+# now we can create tweets
 api = tweepy.API(auth)
-#Now we can Create Tweets, Delete Tweets, and Find Twitter Users
 
 try:
+	# updates Twitter status with text and an accompanying image
 	api.update_with_media(filename='UofM.jpg', status='#UMSI-206 #Proj3')
 	print("Success!")
 except:
